@@ -1,0 +1,13 @@
+@if not exist Demo\generated_proto mkdir Demo\generated_proto
+
+@echo Running Protocol Buffer Compiler on netmessages_public.proto...
+@protoc-2.5.0-win32\protoc.exe --proto_path=.\Proto --proto_path=.\protobuf-2.5.0\src --cpp_out=Demo\generated_proto .\Proto\netmessages_public.proto
+
+@echo Running Protocol Buffer Compiler on cstrike15_usermessages_public.proto...
+@protoc-2.5.0-win32\protoc.exe --proto_path=.\Proto --proto_path=.\protobuf-2.5.0\src --cpp_out=Demo\generated_proto .\Proto\cstrike15_usermessages_public.proto
+
+@echo Running Protocol Buffer Compiler on cstrike15_gcmessages.proto...
+@protoc-2.5.0-win32\protoc.exe --proto_path=.\Proto --proto_path=.\protobuf-2.5.0\src --cpp_out=Demo\generated_proto .\Proto\cstrike15_gcmessages.proto
+
+@echo Running Protocol Buffer Compiler on steammessages.proto...
+@protoc-2.5.0-win32\protoc.exe --proto_path=.\Proto --proto_path=.\protobuf-2.5.0\src --cpp_out=Demo\generated_proto .\Proto\steammessages.proto
