@@ -1,4 +1,6 @@
 *.exe
+*.pb.cc
+*.pb.h
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
