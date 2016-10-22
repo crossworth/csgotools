@@ -1,8 +1,8 @@
 #include "ServerInfo.hpp"
 
-using namespace csgosdk;
+using namespace csgotools;
 
-std::ostream& csgosdk::operator<<(std::ostream& out, const ServerInfo& server_info) {
+std::ostream& csgotools::operator<<(std::ostream& out, const ServerInfo& server_info) {
 	out << "------------SERVER INFO------------" << std::endl;
 	out << "protocol: " << server_info.protocol << std::endl;
 	out << "server_count (num change level): " << server_info.server_count << std::endl;

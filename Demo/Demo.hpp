@@ -27,10 +27,10 @@
 #include "Player.hpp"
 
 
-#include "generated_proto\netmessages_public.pb.h"
-#include "generated_proto\cstrike15_usermessages_public.pb.h"
-#include "generated_proto\cstrike15_gcmessages.pb.h"
-#include "generated_proto\steammessages.pb.h"
+#include "netmessages_public.pb.h"
+#include "cstrike15_usermessages_public.pb.h"
+#include "cstrike15_gcmessages.pb.h"
+#include "steammessages.pb.h"
 
 
 namespace csgotools {

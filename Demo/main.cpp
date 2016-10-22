@@ -9,7 +9,7 @@ using namespace csgotools;
 int main(int argc, char** argv) {
 	ProfileBlockStrMS("Complete demo");
 	Demo demo;
-	demo.Open("C:\\Users\\Pedro Henrique\\Documents\\Visual Studio 2015\\Projects\\CSGOSimpleDemo\\CSGOSimpleDemo\\2.dem");
+	demo.Open("C:/1.dem");
 	demo.SetParse(Demo::ParseType::ALL);
 
 	demo.SetGameEventCallback("begin_new_match", [](GameEvent& evt) {

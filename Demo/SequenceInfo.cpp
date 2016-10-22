@@ -1,6 +1,6 @@
 #include "SequenceInfo.hpp"
 
-using namespace csgosdk;
+using namespace csgotools;
 
 SequenceInfo SequenceInfo::CreateFromMemory(MemoryBitStream & memory) {
 	SequenceInfo sequence;

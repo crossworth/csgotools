@@ -1,7 +1,7 @@
 #ifndef CSGOTOOLS_FLATTENED_PROP_ENTRY_HPP_
 #define CSGOTOOLS_FLATTENED_PROP_ENTRY_HPP_
 
-#include "generated_proto\netmessages_public.pb.h"
+#include "netmessages_public.pb.h"
 
 namespace csgotools {
 	struct FlattenedPropEntry {

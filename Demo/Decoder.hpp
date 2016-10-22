@@ -5,7 +5,7 @@
 
 #include "Prop.hpp"
 
-#include "generated_proto\netmessages_public.pb.h"
+#include "netmessages_public.pb.h"
 
 namespace csgotools {
 

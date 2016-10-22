@@ -1,8 +1,8 @@
 #include "Team.hpp"
 
-using namespace csgosdk;
+using namespace csgotools;
 
-std::ostream& csgosdk::operator<<(std::ostream& out, const Team& team) {
+std::ostream& csgotools::operator<<(std::ostream& out, const Team& team) {
 	out << "------------Team------------" << std::endl;
 	out << "Name: " << team.GetName() << std::endl;
 	out << "Type: ";
