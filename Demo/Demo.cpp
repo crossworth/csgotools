@@ -29,7 +29,7 @@ bool Demo::Open(const std::string& demo_name) {
 		file.seekg(0, std::ios::beg);
 
 		if (file_size <= 0) {
-			std::cerr << "Demo::Opene: File too small: " << file_size << " bytes" << std::endl;
+			std::cerr << "Demo::Open: File too small: " << file_size << " bytes" << std::endl;
 			file.close();
 			is_demo_valid_ = false;
 			return false;
@@ -175,8 +175,6 @@ bool Demo::ParseDataTables() {
 }
 
 void Demo::FlattenDataTables(uint32 index) {
-	
-
 	CSVCMsg_SendTable& table = send_tables_[server_classes_[index].GetDTName()];
 
 	std::set<std::string> exclude_entries;
@@ -184,9 +182,6 @@ void Demo::FlattenDataTables(uint32 index) {
 	GatherExcludes(table, exclude_entries);
 	GatherProps(table, exclude_entries, index);
 
-	
-
-	// Do we need this extra shit?
 	std::vector<FlattenedPropEntry>& flattened_props = server_classes_[index].GetFlattenedPropsEntry();
 	std::vector<uint32> priorities;
 	priorities.push_back(64);
@@ -289,10 +284,6 @@ void Demo::GatherPropsInternal(CSVCMsg_SendTable& table, std::set<std::string>& 
 }
 
 void Demo::GatherProps(CSVCMsg_SendTable& table, std::set<std::string>& excludes, uint32 class_num) {
-	//std::vector<FlattenedPropEntry>& flattened_props = server_classes_[class_num].GetFlattenedPropsEntry();
-	//GatherPropsInternal(table, excludes, class_num, std::move(flattened_props));
-
-	// TODO(Pedro): Check if this has any effect
 	std::vector<FlattenedPropEntry> temp_flattened_props;
 
 	GatherPropsInternal(table, excludes, class_num, temp_flattened_props);
@@ -516,7 +507,6 @@ bool Demo::ParseStringTable(const std::string& table_name, MemoryBitStream& data
 			uint16 data_size = data.ReadInt16();
 
 			if (table_name == "userinfo") {
-				// parse user info
 				MemoryBitStream data_user_info;
 				// NOTE(Pedro): Valve default implementation adds 4 to the user data
 				// Im guessing that this must be for some odd case
@@ -619,9 +609,11 @@ bool Demo::ParseGameEvent(CSVCMsg_GameEvent&& game_event) {
 	} 
 
 	// Skip the events on the skip list
-	if (skip_game_events_.find(event_id) != skip_game_events_.end()) {
+	if (skip_game_events_.find(event_name) != skip_game_events_.end()) {
 		return false;
 	}
+
+
 
 	// process our stuff first
 	switch (event_id) {
@@ -662,18 +654,10 @@ bool Demo::ParseGameEventList(CSVCMsg_GameEventList&& game_event_list) {
 			game_event_descriptor.keys.push_back(std::move(key));
 		}
 
-		game_event_descriptor_[game_event_descriptor.event_id] = game_event_descriptor;
+		game_event_descriptor_[game_event_descriptor.event_id] = std::move(game_event_descriptor);
 	}
 
 	return true;
-}
-
-void Demo::AddGameEventToSkipList(const std::string& event_name) {
-	AddGameEventToSkipList(GameEventNameToEventID(event_name));
-}
-
-void Demo::RemoveGameEventFromSkipList(const std::string& event_name) {
-	RemoveGameEventFromSkipList(GameEventNameToEventID(event_name));
 }
 
 int32 Demo::GameEventNameToEventID(const std::string& event_name) {
@@ -687,16 +671,16 @@ int32 Demo::GameEventNameToEventID(const std::string& event_name) {
 }
 
 void Demo::CreateSkipList() {
-	AddGameEventToSkipList(168); // player_footstep
-	AddGameEventToSkipList(129); // weapon_fire
-	AddGameEventToSkipList(128); // bomb_beep
-	AddGameEventToSkipList(170); // player_blind 
-	AddGameEventToSkipList(169); // player_jump
-	AddGameEventToSkipList(24);  // player_hurt
-	AddGameEventToSkipList(132); // weapon_reload
-	AddGameEventToSkipList(133); // weapon_zoom
-	AddGameEventToSkipList(234); // hltv_status
-	AddGameEventToSkipList(239); // hltv_chase
+	AddGameEventToSkipList("player_footstep"); // player_footstep
+	AddGameEventToSkipList("weapon_fire"); // weapon_fire
+	AddGameEventToSkipList("bomb_beep"); // bomb_beep
+	AddGameEventToSkipList("player_blind"); // player_blind 
+	AddGameEventToSkipList("player_jump"); // player_jump
+	AddGameEventToSkipList("player_hurt");  // player_hurt
+	AddGameEventToSkipList("weapon_reload"); // weapon_reload
+	AddGameEventToSkipList("weapon_zoom"); // weapon_zoom
+	AddGameEventToSkipList("hltv_status"); // hltv_status
+	AddGameEventToSkipList("hltv_chase"); // hltv_chase
 }
 
 void Demo::SetGameEventCallback(const std::string& event_name, GameEventCallback callback) {
@@ -838,11 +822,6 @@ bool Demo::ParsePacketEntities(CSVCMsg_PacketEntities&& packet_entities) {
 		--entry_index;
 
 		bool is_entity = (entry_index >= 0) != 0;
-		
-
-		if (entry_index == 216) {
-			//__debugbreak();
-		}
 
 		if (is_entity) {
 			current_entry = current_entry + 1 + data.ReadUBitVar();
@@ -1013,7 +992,6 @@ int32 Demo::ReadFieldIndex(MemoryBitStream& data, bool new_way, uint32 index) {
 
 	return index + 1 + result;
 }
-
 
 CSVCMsg_SendTable* Demo::GetTableByClassID(uint32 class_id) {
 	for (uint32 i = 0, size = server_classes_.size(); i < size; ++i) {

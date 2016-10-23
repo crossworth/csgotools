@@ -56,6 +56,10 @@ namespace csgotools {
 		}
 
 		MemoryBitStream(MemoryBitStream&& other) {
+            if (&other == this) {
+                return;
+            }
+
 			this->size_bits_ = other.size_bits_;
 			this->buffer_ = other.buffer_;
 			this->current_position_ = other.current_position_;
@@ -73,6 +77,10 @@ namespace csgotools {
 		}
 
 		MemoryBitStream& operator=(MemoryBitStream&& other) {
+            if (&other == this) {
+                return *this;
+            }
+
 			this->size_bits_ = other.size_bits_;
 			this->buffer_ = other.buffer_;
 			this->current_position_ = other.current_position_;

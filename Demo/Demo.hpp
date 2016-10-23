@@ -116,6 +116,8 @@ namespace csgotools {
 		bool IsParsingWarmUp() const { return parse_warm_up_; }
 		bool WarmUpEnded() const { return warm_up_ended_; }
 
+        // TODO(Pedro): Knife round?
+
 		ServerInfo GetServerInfo() const { return server_info_; }
 		NetTick GetLastNetTick() const { return net_ticks_.back(); }
 		std::vector<NetTick> GetNetTickList() const;
@@ -138,16 +140,11 @@ namespace csgotools {
 		bool IsDemoParsed() const { return is_demo_parsed_; }
 		DemoHeader GetDemoHeader() const { return header_; }
 
-
 		void SetGameEventCallback(const std::string& event_name, GameEventCallback callback);
 		void RemoveGameEventCallback(const std::string& event_name);
-
-		int32 GameEventNameToEventID(const std::string& event_name);
-
-		void AddGameEventToSkipList(int32 event_id) { skip_game_events_.insert(event_id); }
-		void AddGameEventToSkipList(const std::string& event_name);
-		void RemoveGameEventFromSkipList(int32 event_id) {skip_game_events_.erase(skip_game_events_.find(event_id)); }
-		void RemoveGameEventFromSkipList(const std::string& event_name);
+                                                                                                                                            
+        void AddGameEventToSkipList(const std::string& event_name) { skip_game_events_.insert(event_name); }
+		void RemoveGameEventFromSkipList(const std::string& event_name) { skip_game_events_.erase(skip_game_events_.find(event_name)); }
 
 		void SetDefaultSkipList(bool enable) { use_default_skip_list_ = enable; }
 		bool IsDefaultSkipListEnable() { return use_default_skip_list_; }
@@ -188,18 +185,13 @@ namespace csgotools {
 		void ParseEntity(EntityEntry& entity, MemoryBitStream& data);
 		int32 ReadFieldIndex(MemoryBitStream& data, bool new_way, uint32 index);
 
-
+        int32 GameEventNameToEventID(const std::string& event_name);
 
 		CSVCMsg_SendTable* GetTableByClassID(uint32 class_id);
 
-
 		void SwapTeamSide();
-		
-		// TODO(Pedro) make classes for most of this
-/*		
-		
-		bool ParseEntity();
-	*/	
+
+
 		MemoryBitStream memory_{};
 		DemoHeader header_{};
 		CommandInfo command_info_{};
@@ -213,7 +205,7 @@ namespace csgotools {
 		std::vector<Player> players_;
 		std::unordered_map<std::string, CSVCMsg_SendTable> send_tables_;
 		std::unordered_map<uint32, ServerClass> server_classes_;
-		std::set<int32> skip_game_events_;
+		std::set<std::string> skip_game_events_;
 
 		Team team_ct_{};
 		Team team_t_{};
