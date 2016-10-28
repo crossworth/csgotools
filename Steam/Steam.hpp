@@ -6,7 +6,6 @@
 #include <cstdint>
 #include <algorithm>
 
-
 namespace csgotools {
 	
 	using uint64 = uint64_t;
@@ -22,20 +21,25 @@ namespace csgotools {
 	// For more info: https://developer.valvesoftware.com/wiki/SteamID
 
 	class SteamID {
+        static constexpr uint64 kBaseSteam64 = 76561197960265728;
 	public:
 		SteamID() = default;
 
 		SteamID(uint64 steam_id64) {
-			steam_id64_ = steam_id64;
+            if (IsSteamID3AsInt(steam_id64)) {
+                steam_id64_ = steam_id64 + SteamID::kBaseSteam64;
+            } else {
+                steam_id64_ = steam_id64;
+            }
 		}
 
 		SteamID(std::string steam_id) {
 			steam_id64_ = 0;
 
-			if (IsValidSteam32(steam_id)) {
+            if (IsValidSteam3(steam_id)) {
+                steam_id64_ = SteamID::SteamID3ToSteamID64(steam_id);
+            } else if (IsValidSteam32(steam_id)) {
 				steam_id64_ = SteamID::SteamID32ToSteamID64(steam_id);
-			} else if (IsValidSteam3(steam_id)) {
-				std::cerr << "SteamID::SteamID: There is no way to convert SteamID3 to Steam64 or Steam32" << std::endl;
 			} else {
 				bool is_steam64 = true;
 
@@ -51,6 +55,14 @@ namespace csgotools {
 				}
 			}
 		}
+
+        bool IsSteamID3AsInt(uint64 steam_id) {
+            if ((steam_id >> 32) > 0) {
+                return false;
+            }
+
+            return true;
+        }
 
 		void SetSteamID64(uint64 steam_id64) {
 			steam_id64_ = steam_id64;
@@ -86,7 +98,6 @@ namespace csgotools {
 			}
 			
 			std::string account_number = tmp.substr(5, tmp.length() - 6);
-			std::cout << account_number << std::endl;
 
 			for (char c : account_number) {
 				if (c < '0' || c > '9') {
@@ -127,18 +138,26 @@ namespace csgotools {
 		static uint64 SteamID32ToSteamID64(const std::string& steam_id32) {
 			if (IsValidSteam32(steam_id32)) {
 				uint64 account_number = std::stoll(steam_id32.substr(10));
-				return (account_number * 2) + 76561197960265728;
+				return (account_number * 2) + SteamID::kBaseSteam64;
 			}
 
 			return 0;
 		}
+
+        static uint64 SteamID3ToSteamID64(const std::string& steam_id3) {
+            if (IsValidSteam3(steam_id3)) {
+                return SteamID::kBaseSteam64 + std::stoll(steam_id3.substr(5, steam_id3.length() - 6));
+            }
+
+            return 0;
+        }
 
 		static std::string SteamID64ToSteam3(uint64 steam_id64) {
 			if (steam_id64 == 0) {
 				return std::string("[U:1:0]");
 			}
 
-			uint64 account_number = (steam_id64 - (76561197960265728 + (steam_id64 % 2))) / 2;
+			uint64 account_number = (steam_id64 - (SteamID::kBaseSteam64 + (steam_id64 % 2))) / 2;
 			int id_number = (steam_id64 % 2 != 0) ? 1 : 0;
 			return std::string("[U:1:" + std::to_string((account_number * 2) + id_number) + "]");
 		}
@@ -148,7 +167,7 @@ namespace csgotools {
 				return std::string("STEAM_1:0:0");
 			}
 
-			uint64 account_number = (steam_id64 - (76561197960265728 + (steam_id64 % 2))) / 2;
+			uint64 account_number = (steam_id64 - (SteamID::kBaseSteam64 + (steam_id64 % 2))) / 2;
 			int id_number = (steam_id64 % 2 != 0) ? 1 : 0;
 			// NOTE(Pedro) When we parse the demo CSGO give us STEAM_1 as SteamID32	(Universe Public)
 			// Apparently STEAM_0 was a bug/problem with some Source games
