@@ -27,8 +27,22 @@ int main(int argc, char** argv) {
 
     DemoInfo demo_info;
     demo_info.Open("C:/1.dem.info");
-    cout << demo_info.GetDateUTC() << endl;
-    cout << demo_info.GetDateGMT() << endl;
+    //cout << demo_info.GetDateUTC() << endl;
+    //cout << demo_info.GetDateGMT() << endl;
+    //cout << demo_info.GetCTScore() << endl;
+    //cout << demo_info.GetTScore() << endl;
+    cout << demo_info.GetMatchDuration() << endl;
+
+    auto round = demo_info.GetRound(demo_info.GetNumberRounds() - 1);
+    auto p = round.GetTPlayers();
+    auto rounds = demo_info.GetRounds();
+
+    for (auto& pl : p) {
+       /* cout << pl.first << " " << pl.second.GetSteamID().GetSteamID3() << " K: " << pl.second.GetKills() << " A: " << pl.second.GetAssists()
+            << " D: " << pl.second.GetDeaths() << " M: " << pl.second.GetMVPs() << " S: " << pl.second.GetScore() << endl;*/
+    }
+
+
 
 	return 0;
 }

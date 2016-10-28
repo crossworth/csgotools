@@ -23,11 +23,26 @@ namespace csgotools {
 		bool IsHLTVProxy() const { return is_hltv_proxy_; }
 		Vector GetPosition() const { return position_; }
 		Vector GetEyeAngle() const { return eye_angle_; }
+        int32 GetAssists() const { return assists_; }
+        int32 GetKills() const { return kills_; }
+        int32 GetDeaths() const { return deaths_; }
+        int32 GetScore() const { return score_; }
+        int32 GetMVPs() const { return mvps_; }
+        int32 GetNumberHeadshots() const { return headshots_number_; }
+        float GetHeadshotsPorcentage() const { return (static_cast<float>(headshots_number_) / kills_) * 100.f; }
 
 		void SetName(const std::string& name) { name_ = name; }
+        void SetSteamID(SteamID& steam_id) { steam_id_ = steam_id; }
+        void SetUserID(uint32 user_id) { user_id_ = user_id; }
 		void SetPosition(const Vector& position) { position_ = position; }
-		void SetEyeAngle(const Vector& eye_angle) { eye_angle_ = eye_angle; }
-		
+        void SetEyeAngle(const Vector& eye_angle) { eye_angle_ = eye_angle; }
+        void SetKills(int32 kills) { kills_ = kills; }        
+        void SetAssists(int32 assists) { assists_ = assists; }
+        void SetDeaths(int32 deaths) { deaths_ = deaths; }
+        void SetScore(int32 score) { score_ = score; }        
+        void SetMVPs(int32 mvps) { mvps_ = mvps; }
+        void SetNumberHeadshots(int32 headshots) { headshots_number_ = headshots; }
+
 	
 	private:
 		uint64 version_{}; // for future compatibility
@@ -54,6 +69,7 @@ namespace csgotools {
 		int32 assists_{};
 		int32 score_{};
 		int32 mvps_{};
+        int32 headshots_number_{};
 		
 		friend std::ostream& operator<<(std::ostream& out, const Player& player);
 	};

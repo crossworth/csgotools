@@ -5,6 +5,11 @@
 #include <string>
 #include <chrono>
 
+
+#ifdef _WIN32
+#include <Windows.h>
+#endif
+
 namespace csgotools {
 	
 	// TODO(Pedro) : fix this
@@ -25,6 +30,16 @@ namespace csgotools {
 		last_part = last_part.substr(last_dir_separator + 1);
 		return last_part;
 	}
+
+
+    static bool IsCSGORunning() {
+    #ifdef _WIN32
+        HWND csgo = FindWindowW(0, L"Counter-Strike: Global Offensive");
+        return csgo != 0;
+    #else
+        return false;
+    #endif
+    }
 
 
 	#ifdef _MSC_VER
