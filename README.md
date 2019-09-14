@@ -1,5 +1,7 @@
 # CSGOTools
 
+An improved way to handle CSGO demos.
+
 
 ## Using CSGOTools
 *Windows*
@@ -14,3 +16,5 @@
 The demo project requires you to build libprotobuf as *Multi-threaded (/MT)* for Release 
 and *Multi-threaded Debug (/MTd)* for Debug.
 
+
+**NOTE: The `.proto` files may be outdated**
