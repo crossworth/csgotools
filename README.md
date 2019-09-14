@@ -18,3 +18,5 @@ and *Multi-threaded Debug (/MTd)* for Debug.
 
 
 **NOTE: The `.proto` files may be outdated**
+
+See branch `tests` for a different approach.
