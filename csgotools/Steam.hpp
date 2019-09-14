@@ -4,6 +4,20 @@
 #include <cstdint>
 #include <algorithm>
 
+
+#ifdef _DEBUG
+#ifdef _MSC_VER
+#define assert(expr)  do {if (!(bool)(expr)) { __debugbreak();}} while(0)
+#elif defined(__MACH__)
+#define assert(expr)  do {if (!(bool)(expr)) { __builtin_trap();}} while(0)
+#else
+#define assert(expr)  do {if (!(bool)(expr)) { (*(u32*)0) = 0xDeAdBeEf;}} while(0)
+#endif
+#else
+#define assert(expr)
+#endif
+
+
 namespace csgotools {
 
     using uint64 = uint64_t;

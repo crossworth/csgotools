@@ -2,6 +2,7 @@
 
 using namespace csgotools;
 
+
 const std::string DemoHeader::kDemoHeaderID = "HL2DEMO";
 
 float DemoHeader::TickRate() const {
@@ -18,20 +19,18 @@ bool DemoHeader::IsValid() const {
 
 DemoHeader::operator std::string() const {
     std::string result;
-    result += "------------------DEMO HEADER------------------\n";
-    result += "FileStamp: " + file_stamp_ + "\n";
-    result += "Protocol: " + std::to_string(protocol_) + "\n";
-    result += "Network Protocol: " + std::to_string(network_protocol_) + "\n";
-    result += "Server Name: " + server_name_ + "\n";
-    result += "Client Name: " + client_name_ + "\n";
-    result += "Map Name: " + map_name_ + "\n";
-    result += "Game Dir: " + game_dir_ + "\n";
-    result += "Playback Time: " + std::to_string(playblack_time_) + "\n";
-    result += "Playback Ticks: " + std::to_string(playback_ticks_) + "\n";
-    result += "Playback Frames: " + std::to_string(playback_frames_) + "\n";
-    result += "Sign on Length: " + std::to_string(sign_on_length_) + "\n";
+    result += "FileStamp: " + FileStamp() + "\n";
+    result += "Protocol: " + std::to_string(Protocol()) + "\n";
+    result += "Network Protocol: " + std::to_string(NetworkProtocol()) + "\n";
+    result += "Server Name: " + ServerName() + "\n";
+    result += "Client Name: " + ClientName() + "\n";
+    result += "Map Name: " + MapName() + "\n";
+    result += "Game Dir: " + GameDir() + "\n";
+    result += "Playback Time: " + std::to_string(PlayblackTime()) + "\n";
+    result += "Playback Ticks: " + std::to_string(PlaybackTicks()) + "\n";
+    result += "Playback Frames: " + std::to_string(PlaybackFrames()) + "\n";
+    result += "Sign on Length: " + std::to_string(SignOnLength()) + "\n";
     result += "Server Tick Rate: " + std::to_string(TickRate()) + "\n";
-    result += "------------------DEMO HEADER------------------\n";
     return result;
 }
 
@@ -51,21 +50,9 @@ void DemoHeader::Clear() {
 
 DemoHeader DemoHeader::CreateFromMemoryBitStream(MemoryBitStream& memory) {
     DemoHeader demo;
-
+    // NOTE(Pedro): We have to read the NULL terminator on the end of the file stamp
     demo.file_stamp_ = memory.ReadFixedString(DemoHeader::kDemoHeaderID.length() + 1);
- 
-    if (demo.file_stamp_ != DemoHeader::kDemoHeaderID) {
-        CSGOTOOLS_ERROR("DemoHeader::CreateFromMemoryBitStream: FileStamp ID doesn't match the default CSGO FileStamp ID");
-        return DemoHeader();
-    }
-
     demo.protocol_ = memory.ReadInt32();
-
-    if (demo.protocol_ != DemoHeader::kDemoProtocol) {
-        CSGOTOOLS_ERROR("DemoHeader::CreateFromMemoryBitStream: File protocol doesn't match the default CSGO demo protocol");
-        return DemoHeader();
-    }
-
     demo.network_protocol_ = memory.ReadInt32();
     demo.server_name_ = memory.ReadFixedString(DemoHeader::kMaxOSPath);
     demo.client_name_ = memory.ReadFixedString(DemoHeader::kMaxOSPath);
@@ -75,6 +62,16 @@ DemoHeader DemoHeader::CreateFromMemoryBitStream(MemoryBitStream& memory) {
     demo.playback_ticks_ = memory.ReadInt32();
     demo.playback_frames_ = memory.ReadInt32();
     demo.sign_on_length_ = memory.ReadInt32();
+
+    if (demo.file_stamp_ != DemoHeader::kDemoHeaderID) {
+        std::cerr << "DemoHeader::CreateFromMemoryBitStream: FileStamp ID doesn't match the default CSGO FileStamp ID" << std::endl;
+        return DemoHeader();
+    }
+
+    if (demo.protocol_ != DemoHeader::kDemoProtocol) {
+        std::cerr << "DemoHeader::CreateFromMemoryBitStream: File protocol doesn't match the default CSGO demo protocol" << std::endl;
+        return DemoHeader();
+    }
 
     return demo;
 }

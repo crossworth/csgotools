@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 
 #include "Steam.hpp"
 
@@ -273,10 +274,6 @@ namespace csgotools {
 
         static inline int64 ZigZagDecode64(uint64 n) {
             return(n >> 1) ^ - static_cast<int64>(n & 1);
-        }
-
-        static MemoryBitStream CreateFromCharPointer(char* data, uint32 size) {
-            return MemoryBitStream{data, size};
         }
     };
 

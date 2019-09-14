@@ -1,15 +1,21 @@
-﻿#pragma once
+﻿// CSGOTools/csgotools - 2016
+// Player.hpp
+// Pedro Henrique <system.pedrohenrique@gmail.com>
+// 
 
-#include "Steam.hpp"
+
+#pragma once
+
+#include  "Steam.hpp"
 #include "Vector.hpp"
 #include "DemoMemoryBitStream.hpp"
 
 namespace csgotools {
-
     class Player {
         static constexpr uint32 kMaxPlayerNameLength = 128;
         static constexpr uint32 kSignedGUIDLength = 32;
         static constexpr uint32 kMaxCustomFiles = 4;
+
 
         SteamID steam_id_;
         int32 kills_{};
@@ -37,6 +43,7 @@ namespace csgotools {
         uint32 armor_{};
     public:
 
+
         Player() {}
 
         explicit Player(const SteamID& steam_id)
@@ -56,7 +63,7 @@ namespace csgotools {
         void MVPs(int32 mvps) { mvps_ = mvps; }
         int32& Headshots() { return headshots_; }
         void Headshots(int32 headshots) { headshots_ = headshots; }
-        float HeadshotsPorcentage() const;
+        float HeadshotsPorcentage() const { return (static_cast<float>(headshots_) / kills_) * 100.f; }
 
         uint64& Version() { return version_; }
         void Version(uint64 version) { version_ = version; }

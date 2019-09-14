@@ -1,23 +1,13 @@
-﻿#pragma once
+﻿// CSGOTools/csgotools - 2016
+// SendProp.hpp
+// Pedro Henrique <system.pedrohenrique@gmail.com>
 
-
-#include <sstream>
+#pragma once
 
 #include "Steam.hpp"
+#include <sstream>
 
 namespace csgotools {
-
-    enum class SendPropType {
-        INT,
-        FLOAT,
-        VECTOR,
-        VECTOR_XY,
-        STRING,
-        ARRAY,
-        DATA_TABLE,
-        INT64,
-        NUM_SEND_PROPS_TYPE
-    };
 
     class SendProp {
     public:
@@ -26,9 +16,19 @@ namespace csgotools {
         static constexpr uint32 kSPropCollapsible = (1 << 11);
         static constexpr uint32 kSPropChangesOften = (1 << 18);
 
+        enum class SendPropType {
+            INT,
+            FLOAT,
+            VECTOR,
+            VECTOR_XY,
+            STRING,
+            ARRAY,
+            DATA_TABLE,
+            INT64,
+            NUM_SEND_PROPS_TYPE
+        };
 
         SendPropType Type() const { return type_; }
-
         void Type(SendPropType type) { type_ = type; }
 
         std::string VarName() const { return var_name_; }
@@ -66,26 +66,30 @@ namespace csgotools {
         }
 
         static std::string GetDebugStringIdented(const SendProp& prop, uint32 indentation = 4) {
-            std::stringstream out;
+            std::stringstream output;
             std::string padding;
 
             for (uint32 i = 0; i < indentation; ++i) {
                 padding += " ";
             }
 
-            out << "------------SEND PROP------------" << std::endl;
-            out << padding << "VarName: " << prop.VarName() + "\n";
-            out << padding << "Flags: " << std::to_string(prop.Flags()) + "\n";
-            out << padding << "Priority: " << std::to_string(prop.Priority()) + "\n";
-            out << padding << "DTName: " << prop.dt_name_ + "\n";
-            out << padding << "NumElements: " << std::to_string(prop.NumElements()) + "\n";
-            out << padding << "LowValue: " << std::to_string(prop.LowValue()) + "\n";
-            out << padding << "HighValue: " << std::to_string(prop.HighValue()) + "\n";
-            out << padding << "NumBits: " << std::to_string(prop.NumBits()) + "\n";
-            out << "------------SEND PROP------------" << std::endl;
+            output << padding << "VarName: " << prop.VarName() + "\n";
+            output << padding << "Flags: " << std::to_string(prop.Flags()) + "\n";
+            output << padding << "Priority: " << std::to_string(prop.Priority()) + "\n";
+            output << padding << "DTName: " << prop.dt_name_ + "\n";
+            output << padding << "NumElements: " << std::to_string(prop.NumElements()) + "\n";
+            output << padding << "LowValue: " << std::to_string(prop.LowValue()) + "\n";
+            output << padding << "HighValue: " << std::to_string(prop.HighValue()) + "\n";
+            output << padding << "NumBits: " << std::to_string(prop.NumBits()) + "\n";
 
-            return out.str();
+            return output.str();
         }
+
+        friend std::ostream& operator<<(std::ostream& out, SendProp& prop) {
+            out << static_cast<std::string>(prop) << std::endl;
+            return out;
+        }
+
 
     private:
         SendPropType type_{};
@@ -99,10 +103,5 @@ namespace csgotools {
         float high_value_{};
         int32 num_bits_{};
     };
-
-    inline std::ostream& operator<<(std::ostream& out, SendProp& prop) {
-        out << static_cast<std::string>(prop) << std::endl;
-        return out;
-    }
 
 }

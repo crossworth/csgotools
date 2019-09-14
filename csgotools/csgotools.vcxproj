@@ -68,14 +68,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)\output\</OutDir>
-    <IntDir>$(Configuration)\output\tmp\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)\output\</OutDir>
-    <IntDir>$(Configuration)\output\tmp\</IntDir>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -136,44 +129,24 @@
     <ClCompile Include="..\generated_proto\cstrike15_usermessages_public.pb.cc" />
     <ClCompile Include="..\generated_proto\netmessages_public.pb.cc" />
     <ClCompile Include="..\generated_proto\steammessages.pb.cc" />
-    <ClCompile Include="CommandInfo.cpp" />
-    <ClCompile Include="ConVar.cpp" />
     <ClCompile Include="Demo.cpp" />
     <ClCompile Include="DemoHeader.cpp" />
-    <ClCompile Include="GameEventDescriptor.cpp" />
-    <ClCompile Include="GameEventList.cpp" />
-    <ClCompile Include="GameEvent.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="NetTick.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SendTable.cpp" />
-    <ClCompile Include="SequenceInfo.cpp" />
     <ClCompile Include="ServerClass.cpp" />
-    <ClCompile Include="ServerInfo.cpp" />
     <ClInclude Include="..\generated_proto\cstrike15_gcmessages.pb.h" />
     <ClInclude Include="..\generated_proto\cstrike15_usermessages_public.pb.h" />
     <ClInclude Include="..\generated_proto\netmessages_public.pb.h" />
     <ClInclude Include="..\generated_proto\steammessages.pb.h" />
-    <ClInclude Include="CommandInfo.hpp" />
-    <ClInclude Include="ConVar.hpp" />
     <ClInclude Include="Demo.hpp" />
     <ClInclude Include="DemoHeader.hpp" />
     <ClInclude Include="DemoMemoryBitStream.hpp" />
-    <ClInclude Include="ErrorHandling.hpp" />
     <ClInclude Include="FlatSendProp.hpp" />
-    <ClInclude Include="GameEventDescriptor.hpp" />
-    <ClInclude Include="GameEventDescriptorKey.hpp" />
-    <ClInclude Include="GameEventKey.hpp" />
-    <ClInclude Include="GameEventList.hpp" />
-    <ClInclude Include="GameEvent.hpp" />
-    <ClInclude Include="GameEventSkipList.hpp" />
-    <ClInclude Include="NetTick.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="SendProp.hpp" />
     <ClInclude Include="SendTable.hpp" />
-    <ClInclude Include="SequenceInfo.hpp" />
     <ClInclude Include="ServerClass.hpp" />
-    <ClInclude Include="ServerInfo.hpp" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <ItemGroup>

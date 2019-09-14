@@ -1,15 +1,16 @@
-﻿#pragma once
+﻿// CSGOTools/csgotools - 2016
+// SendTable.hpp
+// Pedro Henrique <system.pedrohenrique@gmail.com>
+
+#pragma once
 
 #include <vector>
-#include <unordered_map>
-#include <set>
-
-#include "ErrorHandling.hpp"
 #include "DemoMemoryBitStream.hpp"
 #include "ServerClass.hpp"
 #include "SendProp.hpp"
 #include "FlatSendProp.hpp"
-
+#include <unordered_map>
+#include <set>
 
 namespace csgotools {
 
@@ -38,8 +39,6 @@ namespace csgotools {
                                         std::unordered_map<std::string, SendTable>& tables,
                                         ServerClass& server_class);
 
-        static void GetPriorities(std::vector<uint32>& priorities, std::vector<FlatSendProp>& flattened_props);
-        static void SortPropsByPriority(std::vector<uint32>& priorities, std::vector<FlatSendProp>& flattened_props);
 
     public:
         bool IsEnd() const { return is_end_; }

@@ -1,0 +1,483 @@
+=============
+DEMO LOCATION
+PLAYER NAME
+STEAMID64
+ROUND
+ROUND DURATION
+=============
+
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003133075299076407384_2130627187_204.dem
+BOT Weeknd
+76561198066906880
+15
+76
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003133269455220506699_0197295893_204.dem
+Jp
+76561198069624933
+3
+87
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003133269455220506699_0197295893_204.dem
+BOT Weeknd
+76561198066906880
+13
+65
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003134727446293643343_0277250159_204.dem
+ANA MARIA PRAGA
+76561198284986723
+14
+45
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003136025441245069395_1254108639_204.dem
+The4Fun
+76561198040717107
+18
+109
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003136428702166941731_1540177410_204.dem
+Diabolico
+76561198164594054
+11
+46
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003136979269729648641_1433672774_204.dem
+BOT Weeknd
+76561198066906880
+8
+87
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003136979269729648641_1433672774_204.dem
+BOT Weeknd
+76561198066906880
+20
+94
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003137135267236807049_1255940823_204.dem
+Pablog5749
+76561198194928677
+2
+48
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003137138441217638467_1346189889_204.dem
+The4Fun
+76561198040717107
+4
+70
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003137142439832191009_1840796972_204.dem
+BOT Weeknd
+76561198066906880
+16
+67
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003137150387669172253_1264593303_204.dem
+BOT Weeknd
+76561198066906880
+7
+124
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003137150387669172253_1264593303_204.dem
+Alem∆o
+76561198067067297
+23
+93
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003137289493069955197_0965989424_204.dem
+Eu JOGO PB xitado
+76561198269391841
+8
+132
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003137289493069955197_0965989424_204.dem
+BOT Weeknd
+76561198066906880
+25
+119
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003137544581915082759_1261471363_204.dem
+BOT Weeknd
+76561198066906880
+22
+88
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003137731288438407199_2041933649_204.dem
+BOT Weeknd
+76561198066906880
+16
+36
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003137731288438407199_2041933649_204.dem
+BOT Weeknd
+76561198066906880
+24
+122
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003138039806676697161_0669219249_204.dem
+BOT Weeknd
+76561198066906880
+15
+75
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003138280086474588329_0197570301_204.dem
+BOT Weeknd
+76561198066906880
+8
+70
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003138287360001703970_0119556487_204.dem
+? Cordobes
+76561198296730405
+17
+55
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003138293765945426015_0176901441_204.dem
+Ellobocrazy / CSGOHandouts.com
+76561198157021361
+3
+70
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003138293765945426015_0176901441_204.dem
+BOT Weeknd
+76561198066906880
+4
+108
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003138293765945426015_0176901441_204.dem
+Ellobocrazy / CSGOHandouts.com
+76561198157021361
+5
+89
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003138458709869461638_0746420434_204.dem
+BOT Weeknd
+76561198066906880
+18
+78
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003139395356337373229_1584631134_204.dem
+The4Fun
+76561198040717107
+15
+83
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003139395356337373229_1584631134_204.dem
+BOT Weeknd
+76561198066906880
+28
+120
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003139402108025962534_1713472008_204.dem
+The4Fun
+76561198040717107
+1
+76
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003139402108025962534_1713472008_204.dem
+PuPI
+76561198038906259
+11
+106
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003139575865222889492_1210156112_204.dem
+only p90 newba
+76561198085742407
+21
+62
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003139904872602665170_1991683216_204.dem
+BOT Weeknd
+76561198066906880
+13
+113
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003139913819019542604_0354177486_204.dem
+'# Serialkiller ' CSGORage.com
+76561198088098303
+9
+126
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003139926158460584192_1651346601_204.dem
+Um Aleat¢rio
+76561198213237685
+21
+49
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003140327390010409036_2095568184_204.dem
+TissizeraahLAAZZ
+76561198276265747
+17
+52
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003141004360608121112_2143015948_204.dem
+Pirarucu e um copo d'agua
+76561198064415466
+12
+82
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003141004360608121112_2143015948_204.dem
+BOT Weeknd
+76561198066906880
+25
+63
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003141224819131940877_1104302299_204.dem
+BOT Weeknd
+76561198066906880
+14
+123
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003141250256075751445_0306567657_204.dem
+Gabriel
+76561198127981977
+1
+59
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003141442299095941196_1819251309_204.dem
+BOT Weeknd
+76561198066906880
+5
+60
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003141442299095941196_1819251309_204.dem
+BOT Weeknd
+76561198066906880
+17
+112
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003142545560230166549_0894427672_204.dem
+STOYABLANDO ESPANIOL
+76561198199013328
+15
+94
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003155294182805864632_1934547316_204.dem
+Rafael
+76561198142412762
+11
+88
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003155505845236662341_1623333683_204.dem
+BOT Weeknd
+76561198066906880
+20
+110
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003155850308056252713_2072709025_204.dem
+BOT Weeknd
+76561198066906880
+16
+68
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003155856598035857681_0411120830_204.dem
+BOT Weeknd
+76561198066906880
+9
+84
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003155914163482525725_2082539588_204.dem
+C4b3á4o SayajiiN
+76561198263116360
+12
+98
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003156100839941079090_1831675927_204.dem
+BOT Weeknd
+76561198066906880
+22
+87
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003156220680266055707_1665951903_204.dem
+? NOSA LordT
+76561198303762922
+4
+122
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003156292129194508389_1029109460_204.dem
+MataFrango
+76561198092765896
+10
+94
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003156292129194508389_1029109460_204.dem
+BOT Weeknd
+76561198066906880
+15
+100
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003156300019049431073_1788167303_204.dem
+VAC BAN
+76561198057411974
+20
+92
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003157586329542328430_1405585518_204.dem
+Deixa eu te mimar?
+76561198302996557
+6
+146
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003158095343296446789_0661747242_204.dem
+LioTsuki
+76561198161900341
+7
+90
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003158095343296446789_0661747242_204.dem
+Taco Reverso
+76561198304910325
+12
+110
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003159232201812344852_0485229361_204.dem
+Professor Utonium
+76561198170138855
+18
+118
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003159257430450241646_1005080323_204.dem
+LioTsuki
+76561198161900341
+9
+169
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003159430762445406336_1689373958_204.dem
+FKS*// CS.MONEY
+76561198148874708
+19
+91
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003159438559958532105_0268827162_204.dem
+LioTsuki
+76561198161900341
+14
+85
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003159768087029350636_1166736453_204.dem
+LioTsuki
+76561198161900341
+10
+117
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003159803468969934884_0296396592_204.dem
+QUE OTA EU VOU DAR OTA -JP
+76561198267280874
+18
+99
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003160375043217686605_1457324448_204.dem
+?ChB? | Chico delas
+76561198054668423
+1
+123
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003161113457617535017_2070376766_204.dem
+clebinho vrau vrau
+76561198141687874
+2
+47
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003161239547119927436_0314195646_204.dem
+BOT Weeknd
+76561198066906880
+3
+129
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003161478890614947869_0401945209_204.dem
+BOEMIO
+76561198318834240
+4
+36
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003161667050984702056_0568842229_204.dem
+ Bello 
+76561198262204133
+8
+79
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003161667050984702056_0568842229_204.dem
+Joe Bonamassa
+76561198072065400
+13
+83
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003161828653424181474_0657602460_204.dem
+xibas
+76561198074228181
+20
+104
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003161836006408192087_0690667804_204.dem
+LooTi ?
+76561198079594444
+13
+112
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003161977970109710756_0415361839_204.dem
+faelll;p
+76561198107467343
+10
+107
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003162770934889185369_0511513414_204.dem
+Saul Goodman
+76561198302806158
+2
+74
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003163846147739484343_1977796450_204.dem
+Deixa eu te mimar?
+76561198302996557
+21
+77
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003164080762475511839_1964504255_204.dem
+BOT Weeknd
+76561198066906880
+2
+108
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003167187922206064647_1010410077_204.dem
+BalMeister
+76561198072334287
+12
+137
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003167792432410525726_1851084408_204.dem
+Deixa eu te mimar?
+76561198302996557
+12
+131
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003168901266264817714_1371208891_204.dem
+Saul Goodman
+76561198302806158
+10
+130
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003168905724440870949_1246695930_204.dem
+:]
+76561198054102810
+19
+107
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003170016888314921052_1518641184_204.dem
+Deixa eu te mimar?
+76561198302996557
+16
+59
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003170206959945121869_1168551138_204.dem
+Neves
+76561198123446049
+26
+85
+
+C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/replays/match730_003172365984170246429_0813167523_204.dem
+Nalvada
+76561198243076612
+1
+47
+

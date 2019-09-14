@@ -10,7 +10,7 @@ void SendTable::GatherExcluded(SendTable& table,
     for (auto& prop : table.Props()) {
         if (prop.Flags() & SendProp::kSPropExclude) {
             excluded.insert(prop.DTName() + prop.VarName());
-        } else if (static_cast<SendPropType>(prop.Type()) == SendPropType::DATA_TABLE) {
+        } else if (static_cast<SendProp::SendPropType>(prop.Type()) == SendProp::SendPropType::DATA_TABLE) {
             if (tables.find(prop.DTName()) != tables.end()) {
                 SendTable& sub_table = tables[prop.DTName()];
                 GatherExcluded(sub_table, excluded, tables);
@@ -22,6 +22,7 @@ void SendTable::GatherExcluded(SendTable& table,
 void SendTable::GatherProps(SendTable& table, std::set<std::string>& excluded, 
                             std::unordered_map<std::string, SendTable>& tables,
                             ServerClass& server_class) {
+
     GatherPropsIterator(table, server_class.FlattenedProps(), excluded, tables, server_class);
 }
 
@@ -39,7 +40,7 @@ void SendTable::GatherPropsIterator(SendTable& table,
             continue;
         } else if (excluded.count(excluded_name)) {
             continue;
-        } else if (static_cast<SendPropType>(prop.Type()) == SendPropType::DATA_TABLE) {
+        } else if (static_cast<SendProp::SendPropType>(prop.Type()) == SendProp::SendPropType::DATA_TABLE) {
             if (tables.find(prop.DTName()) != tables.end()) {
                 auto& sub_table = tables[prop.DTName()];
 
@@ -50,7 +51,7 @@ void SendTable::GatherPropsIterator(SendTable& table,
                 }
             }
         } else {
-            if (static_cast<SendPropType>(prop.Type()) == SendPropType::ARRAY) {
+            if (static_cast<SendProp::SendPropType>(prop.Type()) == SendProp::SendPropType::ARRAY) {
                 flattened_props.emplace_back(&prop, &(table.Props()[i -1]));
             } else {
                 flattened_props.emplace_back(&prop, nullptr);
@@ -68,11 +69,6 @@ void SendTable::MakeFlat(ServerClass& server_class, std::unordered_map<std::stri
     std::vector<uint32> priorities;
     priorities.push_back(64);
 
-    GetPriorities(priorities, flattened_props);
-    SortPropsByPriority(priorities, flattened_props);
-}
-
-void SendTable::GetPriorities(std::vector<uint32>& priorities, std::vector<FlatSendProp>& flattened_props) {
     for (auto& prop : flattened_props) {
         uint32 priority = prop.prop->Priority();
 
@@ -89,11 +85,10 @@ void SendTable::GetPriorities(std::vector<uint32>& priorities, std::vector<FlatS
             priorities.push_back(priority);
         }
     }
-}
 
-void SendTable::SortPropsByPriority(std::vector<uint32>& priorities, std::vector<FlatSendProp>& flattened_props) {
     std::sort(priorities.begin(), priorities.end());
 
+    // sort flattened props by priority
     uint32 start = 0;
     for (auto& priority : priorities) {
         while (true) {
@@ -101,7 +96,7 @@ void SendTable::SortPropsByPriority(std::vector<uint32>& priorities, std::vector
             while (current_prop < flattened_props.size()) {
                 const auto& flat_prop = flattened_props[current_prop];
 
-                if (flat_prop.prop->Priority() == priority || priority == 64 &&
+                if (flat_prop.prop->Priority() == priority || priority == 64 && 
                     flat_prop.prop->Flags() & SendProp::kSPropChangesOften) {
                     if (start != current_prop) {
                         std::swap(flattened_props[start], flattened_props[current_prop]);
@@ -117,28 +112,26 @@ void SendTable::SortPropsByPriority(std::vector<uint32>& priorities, std::vector
             }
         }
     }
+
 }
 
 SendTable SendTable::CreateFromMemory(DemoMemoryBitStream& memory) {
     SendTable result;
     CSVCMsg_SendTable table;
 
-    int32 type = memory.ReadVarInt32();
-
-    if (type != SVC_Messages::svc_SendTable) {
-        CSGOTOOLS_ERROR("SendTable::CreateFromMemory: SendTable wrong type: " + std::to_string(static_cast<int>(type)));
-        return result;
-    }
+    memory.ReadVarInt32();  // <-- Type
+    // NOTE(Pedro): Type should be always 9
+    // enum SVC_Messages { svc_SendTable  }
     
     int32 size = memory.ReadVarInt32();
 
     if (size < 0 || size > SendTable::kNetMaxPayload) {
-        CSGOTOOLS_ERROR("SendTable::CreateFromMemory: Invalid Net Max Payload size");
+        std::cerr << "SendTable::CreateFromMemory: Invalid Net Max Payload size" << std::endl;
         return result;
     }
 
     if (size > SendTable::kDemoRecordBufferSize) {
-        CSGOTOOLS_ERROR("SendTable::CreateFromMemory: Invalid Record Buffer size");
+        std::cerr << "SendTable::CreateFromMemory: Invalid Record Buffer size" << std::endl;
         return result;
     }
 
@@ -152,17 +145,17 @@ SendTable SendTable::CreateFromMemory(DemoMemoryBitStream& memory) {
     result.NeedsDecoder(table.needs_decoder());
 
     for (int32 i = 0; i < table.props_size(); ++i) {
-        auto& prop = table.props(i);
+        auto& p = table.props(i);
 
-        result.props_.emplace_back(static_cast<SendPropType>(prop.type()),
-                                   prop.var_name(),
-                                   prop.flags(),
-                                   prop.priority(),
-                                   prop.dt_name(),
-                                   prop.num_elements(),
-                                   prop.low_value(),
-                                   prop.high_value(),
-                                   prop.num_bits());
+        result.props_.emplace_back(static_cast<SendProp::SendPropType>(p.type()),
+                                   p.var_name(),
+                                   p.flags(),
+                                   p.priority(),
+                                   p.dt_name(),
+                                   p.num_elements(),
+                                   p.low_value(),
+                                   p.high_value(),
+                                   p.num_bits());
     }
 
     return result;

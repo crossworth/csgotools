@@ -1,10 +1,13 @@
-﻿#pragma once
+﻿// CSGOTools/csgotools - 2016
+// ServerClass.hpp
+// Pedro Henrique <system.pedrohenrique@gmail.com>
+// 
 
-#include <vector>
+#pragma once
 
 #include "Steam.hpp"
 #include "FlatSendProp.hpp"
-
+#include <vector>
 
 namespace csgotools {
     class ServerClass {
